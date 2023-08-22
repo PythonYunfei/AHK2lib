@@ -1,4 +1,4 @@
-#Include <Coroutine\Coroutine>
+#Include Coroutine.ahk
 class ObjS {
 	Yield(vl){
 
@@ -11,16 +11,18 @@ class Sum extends ObjS{
 			this.Yield(&x)
 			s+=x**2
 		}
-		this.Yield(s)
+		; this.Yield(s)
+		this.Yield(&s)
 		return s
 	}
 }
 SumN3(arr){  ;only for example
-	for x in arr{
-		if not x is VarRef{
-			return x
-		}
-		%x%:=%x%**(3/2)
+	for &x in arr{
+		; if not x is VarRef{
+		; 	return x
+		; }
+		; %x%:=%x%**(3/2)
+		x:=x**(3/2)
 	}
 }
 cc:=Sum()

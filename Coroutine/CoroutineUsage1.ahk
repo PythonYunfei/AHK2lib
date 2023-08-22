@@ -1,4 +1,4 @@
-#Include <Coroutine\Coroutine>
+#Include Coroutine.ahk
 
 class ObjS{
 	Yield(vl){
